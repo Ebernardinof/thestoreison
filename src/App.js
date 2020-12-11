@@ -1,26 +1,39 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import About from "./components/About";
-import Dashboard from "./components/Dashboard";
-import NavBar from "./components/NavBar";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
-import Modal from "./components/Modal";
-const App = () => {
-  return (
-    <div>
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/about" exact component={About} />
-          <Route path="/projects" exact component={Projects} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/modal" exact component={Modal} />
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
-};
+import { BrowserRouter, Route } from "react-router-dom";
 
-export default App;
+import Navigation from "./components/Navigation";
+import Landing from "./components/Landing";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
+import PasswordForget from "./components/PasswordForget";
+import Home from "./components/Home";
+import Account from "./components/Account";
+import Admin from "./components/admin/Admin";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import AdminChart from "./components/admin/AdminChart";
+
+import * as ROUTES from "./constants/routes";
+import { withAuthentication } from "././components/session";
+import { AdminStatistics } from "./components/admin/AdminStatistics";
+
+const App = () => (
+  <div className="container ">
+    <BrowserRouter>
+      <div>
+        <Navigation />
+      </div>
+      <Route exact path={ROUTES.LANDING} component={Landing} />
+      <Route path={ROUTES.SIGN_UP} component={SignUp} />
+      <Route path={ROUTES.SIGN_IN} component={SignIn} />
+      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+      <Route path={ROUTES.HOME} component={Home} />
+      <Route path={ROUTES.ACCOUNT} component={Account} />
+      <Route path={ROUTES.ADMIN} component={Admin} />
+      <Route path={ROUTES.ADMINDASHBOARD} component={AdminDashboard} />
+      <Route path={ROUTES.ADMINSTATISTICS} component={AdminStatistics} />
+      <Route path={ROUTES.ADMINCHART} component={AdminChart} />
+    </BrowserRouter>
+  </div>
+);
+
+export default withAuthentication(App);

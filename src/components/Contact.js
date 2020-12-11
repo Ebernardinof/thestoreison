@@ -1,5 +1,4 @@
 import React from "react";
-import "../index.css";
 import gmail from "../img/gmail_48px.png";
 import linkedin from "../img/linkedin_40px.png";
 import github from "../img/github_32px.png";
@@ -10,14 +9,14 @@ class Contact extends React.Component {
     firstName: "",
     lastName: "",
     email: "",
-    textarea: ""
+    textarea: "",
   };
 
-  onFormSubmit = e => {
+  onFormSubmit = (e) => {
     e.preventDefault();
   };
 
-  onFormChange = e => {
+  onFormChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
     console.log(this.state);
   };

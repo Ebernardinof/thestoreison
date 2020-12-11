@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+.ui.grid.signupForm {
+  display: grid;
+  margin-top: 80px;
+  justify-content: center;
+  gap: 4px;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: center;
+}
+.ui.button.signin {
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: teal;
+}
+.div.active.item {
+  color: teal;
+}
+select {
+  margin: 1px;
+  border-radius: 6px;
+  border: transparent;
+  align-content: center;
+}
+.ui.vertical.menu.sidebar-menu {
+  margin-top: 42px !important;
+  max-height: calc(100%-42px) !important;
+  height: calc(100%-42px) !important;
+}
+#canvas {
+  height: 40vh;
+  /* background-color: black; */
+}
+.main-content {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .ui.vertical.menu.sidebar-menu {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+  .main-content {
+    margin-left: 25rem;
+  }
+  /* .side-menu-toggler {
+    display: none !important;
+  } */
+}
