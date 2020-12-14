@@ -63,17 +63,7 @@ class Firebase {
   //User Api
   user = (uid) => this.db.ref(`users/${uid}`);
   //user update profile
-  userProfile = (
-    uid,
-    username,
-    firstName,
-    lastName,
-    photoURL,
-    email,
-    address,
-    isReader,
-    isAdmin
-  ) => this.db.ref(`users/profile/${uid}`);
+  userProfile = (uid) => this.db.ref(`users/profile/${uid}`);
   users = () => this.db.ref("users");
   // User chat
   chats = () => this.db.ref(`chats/`);

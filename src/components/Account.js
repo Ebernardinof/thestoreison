@@ -41,7 +41,7 @@ class AccountPage extends Component {
       }
     );
     this.setState({ error: null });
-    this.props.firebase.doUpdateCurrentUser().on("value", (snapshot) => {
+    this.props.firebase.userProfile().on("value", (snapshot) => {
       const userProfile = [];
       snapshot.forEach((snap) => {
         userProfile.set(snap.val());
@@ -63,7 +63,7 @@ class AccountPage extends Component {
     } = this.state;
 
     this.props.firebase
-      .doUpdateCurrentUser(
+      .userProfile(
         username,
         firstName,
         lastName,
@@ -76,7 +76,7 @@ class AccountPage extends Component {
       .then(() => {
         const { authUser, username } = this.state;
 
-        this.props.firebase.doUpdateCurrentUser().push({
+        this.props.firebase.userProfile().push({
           username: this.state.authUser.username,
           firstName: this.state.authUser.firstName,
           lastName: this.state.authUser.lastName,
