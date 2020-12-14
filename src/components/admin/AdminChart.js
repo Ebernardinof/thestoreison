@@ -9,10 +9,10 @@ export default class AdminChart extends Component {
           className="four wide computer eight wide tablet sixteen wide mobile column"
           id="canvas"
         >
-          BarChart
+          <h3>Sells</h3>
           <Doughnut
             data={{
-              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              labels: ["Lisbon", "France", "Pequim", "Azores", "Brazil"],
               datasets: [
                 {
                   label: " # of events",
@@ -35,16 +35,16 @@ export default class AdminChart extends Component {
                   ],
                   borderWidth: 1,
                 },
-                {
-                  label: "Quantity",
-                  data: [10, 14, 67, 59, 44],
-                  backgroundColor: "orange",
-                  borderColor: "red",
-                },
+                // {
+                //   label: "Quantity",
+                //   data: [10, 14, 67, 59, 44],
+                //   backgroundColor: "orange",
+                //   borderColor: "red",
+                // },
               ],
             }}
-            height={200}
-            width={200}
+            height={150}
+            width={150}
             options={{
               maintainAspectRatio: false,
               scales: {
@@ -62,13 +62,13 @@ export default class AdminChart extends Component {
         <div className="two wide computer eight wide tablet sixteen wide mobile  center aligned column">
           <div className="ui purple statistic" style={{ paddingTop: "50px" }}>
             <div className="value">80+</div>
-            <div className="label">Merchants</div>
+            <div className="label">Tickets</div>
           </div>
           <br />
           <br />
-          <div className="ui purple statistic">
-            <div className="value">80+</div>
-            <div className="label">Merchants</div>
+          <div className="ui teal statistic">
+            <div className="value">20+</div>
+            <div className="label">Events</div>
           </div>
         </div>
 
@@ -76,10 +76,10 @@ export default class AdminChart extends Component {
           className="five wide computer eight wide tablet sixteen wide mobile column"
           id="canvas"
         >
-          BarChart
+          <h3>Last Year</h3>
           <Bar
             data={{
-              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
               datasets: [
                 {
                   label: " # of events",
@@ -106,12 +106,12 @@ export default class AdminChart extends Component {
                   label: "Quantity",
                   data: [10, 14, 67, 59, 44],
                   backgroundColor: "orange",
-                  borderColor: "red",
+                  borderColor: "orange",
                 },
               ],
             }}
-            height={200}
-            width={200}
+            height={150}
+            width={150}
             options={{
               maintainAspectRatio: false,
               scales: {
@@ -130,10 +130,10 @@ export default class AdminChart extends Component {
           className="five wide computer eight wide tablet sixteen wide mobile column"
           id="canvas"
         >
-          BarChart
+          <h3>Current Year</h3>
           <Bar
             data={{
-              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
               datasets: [
                 {
                   label: " # of events",
@@ -164,8 +164,8 @@ export default class AdminChart extends Component {
                 },
               ],
             }}
-            height={200}
-            width={200}
+            height={150}
+            width={150}
             options={{
               maintainAspectRatio: false,
               scales: {

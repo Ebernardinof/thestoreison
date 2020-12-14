@@ -31,6 +31,7 @@ class SignInFormBase extends Component {
     super(props);
     this.state = { ...INITIAL_STATE };
   }
+
   onSubmit = (e) => {
     const { email, password } = this.state;
     this.props.firebase

@@ -1,8 +1,10 @@
 body {
   margin: 0;
 }
+.ui.grid {
+  margin: 0;
+}
 .ui.grid.signupForm {
-  display: grid;
   margin-top: 80px;
   justify-content: center;
   gap: 4px;
@@ -16,14 +18,9 @@ body {
 }
 .link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
-.link:hover {
-  color: teal;
-}
-.div.active.item {
-  color: teal;
-}
+
 select {
   margin: 1px;
   border-radius: 6px;
@@ -43,6 +40,28 @@ select {
   margin-top: 40px;
 }
 
+.ui.grid.landing {
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+.ui.grid.landing .textcentered {
+  color: black;
+  text-shadow: 10px 10px 5px black;
+  font-size: 42px;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.ui.grid.landing h1 {
+  text-align: center;
+}
+.footy {
+  text-align: center;
+}
 @media (min-width: 768px) {
   .ui.vertical.menu.sidebar-menu {
     visibility: visible;
@@ -51,6 +70,7 @@ select {
   .main-content {
     margin-left: 25rem;
   }
+
   /* .side-menu-toggler {
     display: none !important;
   } */

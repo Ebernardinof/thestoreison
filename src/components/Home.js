@@ -1,13 +1,19 @@
 import React from "react";
-
+import { Component } from "react";
+import Chatty from "./Chatty";
+import { compose } from "recompose";
+import * as ROLES from "../constants/roles";
 import { withAuthorization } from "./session";
+import { withFirebase } from "../Firebase";
 
-const Home = () => (
-  <div>
-    <h1>HOME</h1>
-    <p>The home page is accessible by evry signed in users</p>
+const HomePage = () => (
+  <div className="">
+    <h1>Home Page</h1>
+    <p>The Home Page is accessible by every signed in user.</p>
+    <Chatty />
   </div>
 );
 
-const condition = (authUser) => !!authUser;
-export default withAuthorization(Home);
+const condition = (authUser) => authUser;
+
+export default compose(withAuthorization(condition), withFirebase)(HomePage);

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 import "../../App.css";
 
 class AdminDashboard extends Component {
@@ -20,7 +22,9 @@ class AdminDashboard extends Component {
           <div className="menu">
             <a className="item">
               <div>
-                <i className="icon tachometer alternate"></i> Dashboard
+                <Link to={ROUTES.LANDING} className="link">
+                  <i className="icon tachometer alternate"></i> Dashboard
+                </Link>
               </div>
             </a>
           </div>
@@ -30,7 +34,9 @@ class AdminDashboard extends Component {
           <div className="menu">
             <a className="item">
               <div>
-                <i className="icon users"></i> Users
+                <Link to={ROUTES.ADMIN} className="link">
+                  <i className="icon users"></i> Users
+                </Link>
               </div>
             </a>
             <a className="item">
@@ -42,7 +48,9 @@ class AdminDashboard extends Component {
         </div>
         <a className="item">
           <div>
-            <i className="icon chart line"></i> Chart
+            <Link to={ROUTES.ADMINCHART} style={{ color: "white" }}>
+              <i className="icon chart line"></i> Chart
+            </Link>
           </div>
         </a>
         <a className="item">

@@ -3,6 +3,9 @@ import { withFirebase } from "../../Firebase";
 import AdminDashboard from "./AdminDashboard";
 import { AdminStatistics } from "./AdminStatistics";
 import AdminTopDash from "./AdminTopDash";
+import { compose } from "recompose";
+import { withAuthorization } from "../session";
+import * as ROLES from "../../constants/roles";
 
 class Admin extends Component {
   constructor(props) {
@@ -102,5 +105,5 @@ const UserList = ({ users }) => (
     </div>
   </div>
 );
-
-export default withFirebase(Admin);
+const condition = (authUser) => authUser && !!authUser.roles[ROLES.ADMIN];
+export default compose(withAuthorization(condition), withFirebase)(Admin);

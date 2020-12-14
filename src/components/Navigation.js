@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
+import * as ROLES from "../constants/roles";
 import SignOutButton from "./SignOut";
+import GoogleButton from "./GoogleLogin";
 import { AuthUserContext } from "./session/";
 import "../App.css";
 
 const Navigation = () => (
   <div>
     <AuthUserContext.Consumer>
-      {(authUser) => (authUser ? <NavigationAuth /> : <NavigationNonAuth />)}
+      {(authUser) =>
+        authUser ? (
+          <NavigationAuth authUser={authUser} />
+        ) : (
+          <NavigationNonAuth />
+        )
+      }
     </AuthUserContext.Consumer>
   </div>
 );
 
-const NavigationAuth = () => (
+const NavigationAuth = ({ authUser }) => (
   <div className="ui top fixed inverted menu">
     <a href="#" className="sidebar-menu-toggler item" data-target="#sidebar">
       <i className="sidebar icon"></i>
@@ -35,9 +43,11 @@ const NavigationAuth = () => (
         </Link>
       </div>
       <div className="item">
-        <Link to={ROUTES.ADMIN} className="link">
-          Admin
-        </Link>
+        {!!authUser.roles[ROLES.ADMIN] && (
+          <Link to={ROUTES.ADMIN} className="link">
+            Admin
+          </Link>
+        )}
       </div>
       <div className="ui item">
         <SignOutButton />
@@ -65,6 +75,9 @@ const NavigationNonAuth = () => (
         <Link to={ROUTES.SIGN_UP} className="link">
           Sign Up
         </Link>
+      </div>
+      <div className="ui item">
+        <GoogleButton />
       </div>
     </div>
   </div>
